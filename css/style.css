@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merienda+One&display=swap');
+
+/* ----------------Sidebar Section----------------- */
+
+body {}
+
+
+/* style for icons */
+
+.icon-image1 {
+    width: 40px;
+    height: 60px;
+}
+
+.icon-image2 {
+    width: 30px;
+    height: 50px;
+}
+
+
+/* todo heading */
+
+.headdiv .h1 {
+    margin-top: 20px;
+    text-align: center;
+    padding-top: 60px;
+    font-family: 'Abril Fatface', cursive !important;
+}
+
+
+/* todo heading div */
+
+.headdiv {
+    margin-top: 20px;
+    font-family: 'Abril Fatface', cursive !important;
+}
+
+
+/* sidebar links/buttons div */
+
+#colsec1 {
+    border-radius: 20px 5px;
+}
+
+#sidebar {
+    margin-top: 70px;
+}
+
+#side-item {
+    font-size: 20px;
+    padding-top: 10px;
+    display: block;
+    color: white;
+    margin-left: 30%;
+    text-decoration: none;
+    font-family: 'Merienda One', cursive;
+}
+
+
+/* side bar media query */
+
+@media only screen and (min-width: 1200px) {
+    /* For mobile phones: */
+    .h1 {
+        font-size: 70px !important;
+        font-family: 'Abril Fatface', cursive !important;
+    }
+    #colsec1 {
+        position: fixed;
+    }
+}
+
+
+/* no template heading */
+
+@media only screen and (min-width: 800px) {
+    #notmphead {
+        text-align: center;
+        height: 100;
+        font-weight: bold;
+        font-family: 'Merienda One';
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    #whennotemp {
+        display: none;
+    }
+}

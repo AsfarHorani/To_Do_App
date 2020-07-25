@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- css links -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/template-1.css">
+    <link rel="stylesheet" href="css/template-2.css">
+    <link rel="stylesheet" href="css/template-3.css">
+    <link rel="stylesheet" href="css/template-4.css">
+
+    <!-- bootsrap links -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/yourcode.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Merienda+One&display=swap" rel="stylesheet">
+
+    <!-- autoscroll links -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+</head>
+
+<body>
+
+    <!-- first page content when no template -->
+    <div class="wrapper">
+        <div class=".fluid-container" id="back">
+            <div class="row no-gutters">
+                <!-- side bar starts -->
+                <div class="col-sm-3" id="colsec1" data-aos="fade-right" data-aos-duration="2000">
+                    <!-- to do app heading -->
+                    <div class="headdiv">
+                        <h1 class="h1"><span style="color: #dd3e54;">To </span><span style="color: #41295a;"> Do </span> <span style="color: #004e92;">App </span></h1>
+                    </div>
+                    <!-- sidebar items -->
+                    <div id="sidebar">
+                        <div style="background-color: #dd3e54; height: 50px; margin-bottom: 20px; ">
+                            <a id="side-item" href="#template-1" onclick="today()">Today</a>
+                        </div>
+                        <div style="background-color: #41295a; height: 50px; margin-bottom: 20px;">
+                            <a id="side-item" href="#template-2" onclick="Next7Days()">Next  Seven  Days</a>
+                        </div>
+                        <div style="background-color: #004e92; height: 50px; margin-bottom: 20px;">
+                            <a id="side-item" href="#template-3" onclick="Project()">Add  Project </a>
+                        </div>
+                        <div style="background-color: #0b8793; height: 50px; margin-bottom: 20px;">
+                            <a id="side-item" href="#template-4" onclick="Reminder()">Add  Reminder</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- side bar starts -->
+                <!-- display content "templates" -->
+                <div class="col-sm-9">
+                    <div style="margin-top: 150px;" id="displaytemplate">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- first page content when no template ends-->
+
+    <!-- when no template selected starts -->
+    <div id="whennotemp" data-aos="zoom-in" data-aos-duration="2000" style="height: 150px; padding: 20px; margin-left: 350px; margin-top: 80px; display: flex; align-items: center; justify-content: center;">
+        <img width="130px" height="150px" src="./images/ff.jpg" alt="">
+        <h1 id="notmphead"><span style="color: #dd3e54;">Hey, Select Template and Go Ahead!</span></h1>
+    </div>
+    <!-- when no template selected start ends -->
+
+
+
+
+    <!-- TODAY TEMPLATE STARTS -->
+    <div id="template-1" data-aos="fade-left" data-aos-duration="3000">
+        <!-- input section -->
+        <div id="input-sec" style=" padding-top: 30px;">
+            <h2 id="today">Today</h2>
+            <label for="todoitem">Enter To Do Item</label>
+            <input name="todoitem" type="text" id="to-do-item"><br><br>
+            <label for="todotime">Enter To Do Item Time</label>
+            <input name="todotime" type="time" id="to-do-time"><br><br>
+            <button id="addbutton" onclick="additem()">Add Item</button>
+            <button id="delbutton" onclick=" Deleteall()">Delete All</button><br><br>
+        </div><br><br><br>
+        <!-- list display section -->
+        <div>
+            <ul id="list">
+            </ul>
+        </div>
+    </div>
+    <!-- TODAY TEMPLATE ENDS -->
+
+
+
+    <!-- 7-DAYS TEMPLATE STARTS -->
+    <div id="template-2">
+        <div id="input-sec2" style="background-color:#41295a; padding-top: 30px;">
+            <h2 id="days">hello world</h2>
+            <label for="todoitem">Enter To Do Item</label>
+            <input type=" text " id="to-do-item2" placeholder="Enter To Do Item "><br><br>
+            <label for="todotime">Enter To Do Item Time</label>
+            <input name="todotime" type="time" id="to-do-time2"><br><br>
+            <button id="addbutton2">Add Item</button>
+            <button id="delbutton2">Delete All</button><br><br>
+        </div>
+    </div>
+    <!-- 7-DAYS TEMPLATE ENDS -->
+
+
+
+    <!-- PROJECT TEMPLATE STARTS -->
+    <div id="template-3">
+        <!-- input section -->
+        <div id="input-sec3" style="background-color:#004e92; padding-top: 20px;">
+            <div class="row">
+                <!-- left input section -->
+                <div class="col-sm-8" style="text-align: center;">
+                    <label>Enter Project Title</label>
+                    <input type="text" id="to-do-title" placeholder="Enter Project Title"><br><br>
+                    <label>Enter Any Link</label>
+                    <input type="text" id="to-do-link" placeholder="Enter Link"><br><br>
+                    <button id="addbutton3" onclick="temp3()">Add Item</button>
+                    <button id="delbutton3">Delete All</button><br><br>
+                </div>
+                <!-- left input section -->
+                <div class="col-sm-4">
+                    <ul style="margin-top: -20px;">
+                        <li><input id="pro-inp1" type="text" placeholder="Enter keywords"></li>
+                        <li><input id="pro-inp2" type="text" placeholder="Enter keywords"></li>
+                        <li><input id="pro-inp3" type="text" placeholder="Enter keywords"></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Display Template Section -->
+        <div class="container" style="display: grid; margin-top: 50px;">
+            <div class="row" id="display3" style="justify-content :center;">
+                <!-- <div class="col-sm-3" id="col">
+                    <h2 class="pro-title">hello</h2>
+                    <ul class="pro-keys">
+                        <li class="keywords">javascript</li>
+                        <li class="keywords">python</li>
+                        <li class="keywords">csharp</li>
+                    </ul>
+                    <h2 class="pro-links">hello</h2>
+                </div>  -->
+            </div>
+        </div>
+    </div>
+    <!-- PROJECT TEMPLATE ENDS -->
+
+
+
+
+    <!-- REMINDER TEMPLATE STARTS -->
+    <div id="template-4">
+        <div id="input-sec" style="background-color:#0b8793; padding-top: 50px;">
+            <input type=" text " id="to-do-item " placeholder="Enter To Do Item "><br><br>
+            <button id="addbutton">Add Item</button><br><br>
+            <button id="delbutton">Delete All</button><br><br>
+        </div>
+    </div>
+    <!-- REMINDER TEMPLATE ENDS -->
+
+
+    <!-- initialize auto scrolling -->
+    <script>
+        AOS.init();
+    </script>
+
+
+    <!-- linking javascript file -->
+    <script src="app.js "></script>
+</body>
+
+</html>

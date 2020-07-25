@@ -1,0 +1,132 @@
+#template-1 {
+    width: 80%;
+    margin-left: 90px;
+    margin-right: 90px;
+    border-radius: 4px;
+}
+
+#input-sec {
+    border: 1px solid #dd3e54;
+    background-color: #dd3e54;
+    border-radius: 4px;
+}
+
+label {
+    color: white;
+    font-size: 15px;
+    width: 160px;
+}
+
+#addbutton,
+#delbutton {
+    padding: 10px;
+    font-size: 20px;
+    background-color: #0b8793;
+    border: none;
+    color: white;
+    border-radius: 5px 15px;
+    margin-right: 10px;
+}
+
+#addbutton:hover,
+#delbutton:hover {
+    background: #8360c3;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #2ebf91, #8360c3);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #2ebf91, #8360c3);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+#addbutton:focus,
+#delbutton:focus {
+    outline: none;
+}
+
+@media only screen and (max-width: 800px) {
+    /* For mobile phones: */
+    #template-1 {
+        margin-left: 30px;
+        margin-right: -40px;
+    }
+    #displaytemplate {
+        margin-top: 30px;
+    }
+    label {
+        color: white;
+        font-size: 16px;
+    }
+    input {
+        width: 30%;
+        height: 40px;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .col-sm-9 {
+        margin-left: 330px;
+    }
+    #display3 {
+        margin-left: -20px;
+    }
+}
+
+ul li {
+    cursor: pointer;
+    position: relative;
+    padding: 12px 8px 12px 40px;
+    list-style-type: none;
+    font-size: 18px;
+    transition: 0.2s;
+    /* make the list items unselectable */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    color: white;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: -40px;
+}
+
+
+/* Style the close button */
+
+.btn {
+    position: absolute;
+    width: 40px;
+    height: 30px;
+}
+
+#close {
+    right: 10px;
+}
+
+
+/* style the edit button */
+
+.ebtn {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+}
+
+#eclose {
+    right: 55px;
+}
+
+
+/* input */
+
+input {
+    width: 50%;
+    height: 50px;
+}
+
+#input-sec {
+    text-align: center;
+}
+
+#today {
+    color: white;
+}
