@@ -144,6 +144,7 @@ function temp3() {
     var tt = document.createTextNode(titl.value);
     head1.appendChild(tt);
     head1.setAttribute("class", "pro-title");
+    titl.value = "";
 
     // delete button //
     var del = document.createElement("img");
@@ -163,18 +164,21 @@ function temp3() {
     var text1 = document.createTextNode(key1.value);
     li1.appendChild(text1);
     ulist.appendChild(li1);
+    key1.value = "";
     // list Element//
     var li2 = document.createElement("li");
     li2.setAttribute("class", "keywords");
     var text2 = document.createTextNode(key2.value);
     li2.appendChild(text2);
     ulist.appendChild(li2);
+    key2.value = "";
     // list Element//
     var li3 = document.createElement("li");
     li3.setAttribute("class", "keywords");
     var text3 = document.createTextNode(key3.value);
     li3.appendChild(text3);
     ulist.appendChild(li3);
+    key3.value
 
     divv.appendChild(ulist);
 
@@ -184,6 +188,7 @@ function temp3() {
     head2.appendChild(tt2);
     head2.setAttribute("class", "pro-links");
     divv.appendChild(head2);
+    link.value = ""
 
     // ---- append whole div in displaytemplate----//
     disp3.appendChild(divv);
@@ -248,24 +253,28 @@ function temp2() {
     var text1 = document.createTextNode(dayinp1.value);
     li1.appendChild(text1);
     ulist2.appendChild(li1);
+    dayinp1.value = "";
     // list Element//
     var li1 = document.createElement("li");
     li1.setAttribute("class", "keywords-7");
     var text4 = document.createTextNode(dayinp2.value);
     li1.appendChild(text4);
     ulist2.appendChild(li1);
+    dayinp2.value = "";
     // list Element//
     var li1 = document.createElement("li");
     li1.setAttribute("class", "keywords-7");
     var text5 = document.createTextNode(dayinp3.value);
     li1.appendChild(text5);
     ulist2.appendChild(li1);
+    dayinp3.value = "";
     // list Element//
     var li2 = document.createElement("li");
     li2.setAttribute("class", "keywords-7");
     var text2 = document.createTextNode(dayinp4.value);
     li2.appendChild(text2);
     ulist2.appendChild(li2);
+    dayinp4.value = "";
     // list Element//
     var li3 = document.createElement("li");
     li3.setAttribute("class", "keywords-7");
@@ -273,6 +282,7 @@ function temp2() {
     li3.appendChild(text3);
     ulist2.appendChild(li3);
     div2.appendChild(ulist2);
+    dayinp5.value = "";
 
     // ---- append whole div in displaytemplate----//
     disp2.appendChild(div2);
