@@ -121,17 +121,18 @@ function edit(a) {
 
 
 // Template Project //
+
+// ----input values----//
+var titl = document.getElementById('to-do-title');
+var link = document.getElementById('to-do-link');
+var key1 = document.getElementById('pro-inp1');
+var key2 = document.getElementById('pro-inp2');
+var key3 = document.getElementById('pro-inp3');
+
 var disp3 = document.getElementById('display3');
 var j = 0;
 
 function temp3() {
-
-    // ----input values----//
-    var titl = document.getElementById('to-do-title').value;
-    var link = document.getElementById('to-do-link').value;
-    var key1 = document.getElementById('pro-inp1').value;
-    var key2 = document.getElementById('pro-inp2').value;
-    var key3 = document.getElementById('pro-inp3').value;
 
     // ----Creates div Element----//
     var divv = document.createElement("div");
@@ -140,9 +141,16 @@ function temp3() {
 
     // ----Heading Element create and append in div----//
     var head1 = document.createElement("h2");
-    var tt = document.createTextNode(titl);
+    var tt = document.createTextNode(titl.value);
     head1.appendChild(tt);
     head1.setAttribute("class", "pro-title");
+
+    // delete button //
+    var del = document.createElement("img");
+    del.src = "images/deleteicon.png";
+    del.setAttribute("class", "btn");
+    del.setAttribute("id", "close");
+    head1.appendChild(del);
     divv.appendChild(head1);
 
     // ----ul Element create and append in div----//
@@ -152,19 +160,19 @@ function temp3() {
     // list Element//
     var li1 = document.createElement("li");
     li1.setAttribute("class", "keywords");
-    var text1 = document.createTextNode(key1);
+    var text1 = document.createTextNode(key1.value);
     li1.appendChild(text1);
     ulist.appendChild(li1);
     // list Element//
     var li2 = document.createElement("li");
     li2.setAttribute("class", "keywords");
-    var text2 = document.createTextNode(key2);
+    var text2 = document.createTextNode(key2.value);
     li2.appendChild(text2);
     ulist.appendChild(li2);
     // list Element//
     var li3 = document.createElement("li");
     li3.setAttribute("class", "keywords");
-    var text3 = document.createTextNode(key3);
+    var text3 = document.createTextNode(key3.value);
     li3.appendChild(text3);
     ulist.appendChild(li3);
 
@@ -172,7 +180,7 @@ function temp3() {
 
     // ----Heading Element create and append in div----//
     var head2 = document.createElement("h2");
-    var tt2 = document.createTextNode(link);
+    var tt2 = document.createTextNode(link.value);
     head2.appendChild(tt2);
     head2.setAttribute("class", "pro-links");
     divv.appendChild(head2);
@@ -184,5 +192,104 @@ function temp3() {
     divv.style.backgroundColor = colors[j];
     j++;
     if (j == 4) j = 0;
+
+    del.setAttribute("onclick", "Delete3(this)");
+}
+
+function Delete3(e) {
+    e.parentNode.parentNode.remove();
+}
+
+function Deleteall3() {
+    disp3.innerHTML = "";
 }
 // Template Project //
+
+// Template Next7Days //
+var disp2 = document.getElementById('display2');
+var daynum = document.getElementById('daynumb');
+var dayinp1 = document.getElementById('dayinp-1');
+var dayinp2 = document.getElementById('dayinp-2');
+var dayinp3 = document.getElementById('dayinp-3');
+var dayinp4 = document.getElementById('dayinp-4');
+var dayinp5 = document.getElementById('dayinp-5');
+var k = 0;
+var h = 0;
+var days = ["Day 1", "Day 2", "Day 3", "Day 4", "Day 5", "Day 6", "Day 7"]
+
+function temp2() {
+    // ----Creates div Element----//
+    var div2 = document.createElement("div");
+    div2.setAttribute("class", "col-sm-3");
+    div2.setAttribute("id", "col2");
+
+    // ----ul Element create and append in div----//
+    var ulist2 = document.createElement("ul");
+    ulist2.setAttribute("class", "keys-7");
+
+    // ----Heading Element create and append in div----//
+    var head7 = document.createElement("h5");
+    var ht = document.createTextNode(days[h]);
+    head7.appendChild(ht);
+    h++;
+    if (h == 7) h = 0;
+
+    // delete button //
+    var del = document.createElement("img");
+    del.src = "images/deleteicon.png";
+    del.setAttribute("class", "btn");
+    del.setAttribute("id", "close");
+    head7.appendChild(del);
+    ulist2.appendChild(head7);
+
+    // list Element//
+    var li1 = document.createElement("li");
+    li1.setAttribute("class", "keywords-7");
+    var text1 = document.createTextNode(dayinp1.value);
+    li1.appendChild(text1);
+    ulist2.appendChild(li1);
+    // list Element//
+    var li1 = document.createElement("li");
+    li1.setAttribute("class", "keywords-7");
+    var text4 = document.createTextNode(dayinp2.value);
+    li1.appendChild(text4);
+    ulist2.appendChild(li1);
+    // list Element//
+    var li1 = document.createElement("li");
+    li1.setAttribute("class", "keywords-7");
+    var text5 = document.createTextNode(dayinp3.value);
+    li1.appendChild(text5);
+    ulist2.appendChild(li1);
+    // list Element//
+    var li2 = document.createElement("li");
+    li2.setAttribute("class", "keywords-7");
+    var text2 = document.createTextNode(dayinp4.value);
+    li2.appendChild(text2);
+    ulist2.appendChild(li2);
+    // list Element//
+    var li3 = document.createElement("li");
+    li3.setAttribute("class", "keywords-7");
+    var text3 = document.createTextNode(dayinp5.value);
+    li3.appendChild(text3);
+    ulist2.appendChild(li3);
+    div2.appendChild(ulist2);
+
+    // ---- append whole div in displaytemplate----//
+    disp2.appendChild(div2);
+
+    // color changing using js//
+    div2.style.backgroundColor = colors[k];
+    k++;
+    if (k == 4) k = 0;
+
+    del.setAttribute("onclick", "Delete2(this)");
+
+}
+
+function Delete2(a) {
+    a.parentNode.parentNode.parentNode.remove();
+}
+
+function deleteall2() {
+    disp2.innerHTML = "";
+}

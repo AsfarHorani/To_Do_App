@@ -105,12 +105,41 @@
     <div id="template-2">
         <div id="input-sec2" style="background-color:#41295a; padding-top: 30px;">
             <h2 id="days">hello world</h2>
-            <label for="todoitem">Enter To Do Item</label>
-            <input type=" text " id="to-do-item2" placeholder="Enter To Do Item "><br><br>
-            <label for="todotime">Enter To Do Item Time</label>
-            <input name="todotime" type="time" id="to-do-time2"><br><br>
-            <button id="addbutton2">Add Item</button>
-            <button id="delbutton2">Delete All</button><br><br>
+            <div class="row">
+                <div class="col-sm-6">
+                    <!-- left column -->
+                    <label>Enter To Do Item</label>
+                    <input type=" text" class="inputdisp3" id="dayinp-1" placeholder="Enter To Do Item "><br><br>
+                    <label>Enter To Do Item</label>
+                    <input type=" text" class="inputdisp3" id="dayinp-2" placeholder="Enter To Do Item "><br><br>
+                    <label>Enter To Do Item</label>
+                    <input type=" text" class="inputdisp3" id="dayinp-3" placeholder="Enter To Do Item "><br><br>
+                </div>
+                <div class="col-sm-6">
+                    <!-- right column -->
+                    <label>Enter To Do Item</label>
+                    <input type=" text" class="inputdisp3" id="dayinp-4" placeholder="Enter To Do Item "><br><br>
+                    <label>Enter To Do Item</label>
+                    <input type=" text" class="inputdisp3" id="dayinp-5" placeholder="Enter To Do Item "><br><br>
+                    <button onclick="temp2()" id="addbutton2">Add Item</button>
+                    <button onclick="deleteall2()" id="delbutton2">Delete All</button><br><br>
+                </div>
+            </div>
+        </div>
+        <!-- Display Template Section -->
+        <div class="container" style="display: grid; margin-top: 50px;">
+            <div class="row" id="display2" style="justify-content :center;">
+                <!-- <div class="col-sm-3" id="col2">
+                    <ul class="keys-7">
+                        <h2 id="daynumb"></h2>
+                        <li class="keywords-7">javascript</li>
+                        <li class="keywords-7">python</li>
+                        <li class="keywords-7">csharp</li>
+                        <li class="keywords-7">csharp</li>
+                        <li class="keywords-7">csharp</li>
+                    </ul>
+                </div> -->
+            </div>
         </div>
     </div>
     <!-- 7-DAYS TEMPLATE ENDS -->
@@ -129,7 +158,7 @@
                     <label>Enter Any Link</label>
                     <input type="text" id="to-do-link" placeholder="Enter Link"><br><br>
                     <button id="addbutton3" onclick="temp3()">Add Item</button>
-                    <button id="delbutton3">Delete All</button><br><br>
+                    <button id="delbutton3" onclick="Deleteall3()">Delete All</button><br><br>
                 </div>
                 <!-- left input section -->
                 <div class="col-sm-4">
@@ -157,9 +186,6 @@
         </div>
     </div>
     <!-- PROJECT TEMPLATE ENDS -->
-
-
-
 
     <!-- REMINDER TEMPLATE STARTS -->
     <div id="template-4">
