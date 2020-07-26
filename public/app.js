@@ -61,41 +61,44 @@ var i = 0;
 var colors = ["#dd3e54", "#41295a", "#004e92", "#0b8793"]
 
 function additem() {
-    // list creator//
-    var li = document.createElement('li');
-    var text = document.createTextNode(todoitem.value);
-    li.appendChild(text);
-    todoitem.value = "";
-    var textb = document.createTextNode(" at ");
-    li.appendChild(textb);
-    var textt = document.createTextNode(todotime.value);
-    li.appendChild(textt);
-    todotime.value = "";
+    if (todoitem.value == "" || todotime.value == "") {
+        alert("Please Fill INPUT SECTTIONS carefully");
+    } else {
+        // list creator//
+        var li = document.createElement('li');
+        var text = document.createTextNode(todoitem.value);
+        li.appendChild(text);
+        todoitem.value = "";
+        var textb = document.createTextNode(" at ");
+        li.appendChild(textb);
+        var textt = document.createTextNode(todotime.value);
+        li.appendChild(textt);
+        todotime.value = "";
 
-    // delete button //
-    var del = document.createElement("img");
-    del.src = "images/deleteicon.png";
-    del.setAttribute("class", "btn");
-    del.setAttribute("id", "close");
-    li.appendChild(del);
+        // delete button //
+        var del = document.createElement("img");
+        del.src = "images/deleteicon.png";
+        del.setAttribute("class", "btn");
+        del.setAttribute("id", "close");
+        li.appendChild(del);
 
-    // delete button //
-    var edit = document.createElement("img");
-    edit.src = "images/editicon.png";
-    edit.setAttribute("class", "ebtn");
-    edit.setAttribute("id", "eclose");
-    li.appendChild(edit);
+        // delete button //
+        var edit = document.createElement("img");
+        edit.src = "images/editicon.png";
+        edit.setAttribute("class", "ebtn");
+        edit.setAttribute("id", "eclose");
+        li.appendChild(edit);
 
-    lis.appendChild(li);
+        lis.appendChild(li);
 
-    // css on button//
-    li.style.backgroundColor = colors[i];
+        // css on button//
+        li.style.backgroundColor = colors[i];
 
-    i++;
-    if (i == 4) i = 0;
-    del.setAttribute("onclick", "Delete(this)");
-    edit.setAttribute("onclick", "edit(this)")
-
+        i++;
+        if (i == 4) i = 0;
+        del.setAttribute("onclick", "Delete(this)");
+        edit.setAttribute("onclick", "edit(this)")
+    }
 
 }
 
@@ -133,72 +136,75 @@ var disp3 = document.getElementById('display3');
 var j = 0;
 
 function temp3() {
+    if (titl.value == "" || link.value == "" || key1.value == "" || key2.value == "" || key3.value == "") {
+        alert("Please Fill INPUT SECTTIONS carefully");
+    } else {
+        // ----Creates div Element----//
+        var divv = document.createElement("div");
+        divv.setAttribute("class", "col-sm-3");
+        divv.setAttribute("id", "col");
 
-    // ----Creates div Element----//
-    var divv = document.createElement("div");
-    divv.setAttribute("class", "col-sm-3");
-    divv.setAttribute("id", "col");
+        // ----Heading Element create and append in div----//
+        var head1 = document.createElement("h2");
+        var tt = document.createTextNode(titl.value);
+        head1.appendChild(tt);
+        head1.setAttribute("class", "pro-title");
+        titl.value = "";
 
-    // ----Heading Element create and append in div----//
-    var head1 = document.createElement("h2");
-    var tt = document.createTextNode(titl.value);
-    head1.appendChild(tt);
-    head1.setAttribute("class", "pro-title");
-    titl.value = "";
+        // delete button //
+        var del = document.createElement("img");
+        del.src = "images/deleteicon.png";
+        del.setAttribute("class", "btn");
+        del.setAttribute("id", "close");
+        head1.appendChild(del);
+        divv.appendChild(head1);
 
-    // delete button //
-    var del = document.createElement("img");
-    del.src = "images/deleteicon.png";
-    del.setAttribute("class", "btn");
-    del.setAttribute("id", "close");
-    head1.appendChild(del);
-    divv.appendChild(head1);
+        // ----ul Element create and append in div----//
+        var ulist = document.createElement("ul");
+        ulist.setAttribute("class", "pro-keys");
 
-    // ----ul Element create and append in div----//
-    var ulist = document.createElement("ul");
-    ulist.setAttribute("class", "pro-keys");
+        // list Element//
+        var li1 = document.createElement("li");
+        li1.setAttribute("class", "keywords");
+        var text1 = document.createTextNode(key1.value);
+        li1.appendChild(text1);
+        ulist.appendChild(li1);
+        key1.value = "";
+        // list Element//
+        var li2 = document.createElement("li");
+        li2.setAttribute("class", "keywords");
+        var text2 = document.createTextNode(key2.value);
+        li2.appendChild(text2);
+        ulist.appendChild(li2);
+        key2.value = "";
+        // list Element//
+        var li3 = document.createElement("li");
+        li3.setAttribute("class", "keywords");
+        var text3 = document.createTextNode(key3.value);
+        li3.appendChild(text3);
+        ulist.appendChild(li3);
+        key3.value = "";
 
-    // list Element//
-    var li1 = document.createElement("li");
-    li1.setAttribute("class", "keywords");
-    var text1 = document.createTextNode(key1.value);
-    li1.appendChild(text1);
-    ulist.appendChild(li1);
-    key1.value = "";
-    // list Element//
-    var li2 = document.createElement("li");
-    li2.setAttribute("class", "keywords");
-    var text2 = document.createTextNode(key2.value);
-    li2.appendChild(text2);
-    ulist.appendChild(li2);
-    key2.value = "";
-    // list Element//
-    var li3 = document.createElement("li");
-    li3.setAttribute("class", "keywords");
-    var text3 = document.createTextNode(key3.value);
-    li3.appendChild(text3);
-    ulist.appendChild(li3);
-    key3.value
+        divv.appendChild(ulist);
 
-    divv.appendChild(ulist);
+        // ----Heading Element create and append in div----//
+        var head2 = document.createElement("h2");
+        var tt2 = document.createTextNode(link.value);
+        head2.appendChild(tt2);
+        head2.setAttribute("class", "pro-links");
+        divv.appendChild(head2);
+        link.value = ""
 
-    // ----Heading Element create and append in div----//
-    var head2 = document.createElement("h2");
-    var tt2 = document.createTextNode(link.value);
-    head2.appendChild(tt2);
-    head2.setAttribute("class", "pro-links");
-    divv.appendChild(head2);
-    link.value = ""
+        // ---- append whole div in displaytemplate----//
+        disp3.appendChild(divv);
 
-    // ---- append whole div in displaytemplate----//
-    disp3.appendChild(divv);
+        // color changing using js//
+        divv.style.backgroundColor = colors[j];
+        j++;
+        if (j == 4) j = 0;
 
-    // color changing using js//
-    divv.style.backgroundColor = colors[j];
-    j++;
-    if (j == 4) j = 0;
-
-    del.setAttribute("onclick", "Delete3(this)");
+        del.setAttribute("onclick", "Delete3(this)");
+    }
 }
 
 function Delete3(e) {
@@ -223,77 +229,81 @@ var h = 0;
 var days = ["Day 1", "Day 2", "Day 3", "Day 4", "Day 5", "Day 6", "Day 7"]
 
 function temp2() {
-    // ----Creates div Element----//
-    var div2 = document.createElement("div");
-    div2.setAttribute("class", "col-sm-3");
-    div2.setAttribute("id", "col2");
+    if (dayinp1.value == "" || dayinp2.value == "" || dayinp3.value == "" || dayinp4.value == "" || dayinp5.value == "") {
+        alert("Please Fill INPUT SECTTIONS carefully");
+    } else {
 
-    // ----ul Element create and append in div----//
-    var ulist2 = document.createElement("ul");
-    ulist2.setAttribute("class", "keys-7");
+        // ----Creates div Element----//
+        var div2 = document.createElement("div");
+        div2.setAttribute("class", "col-sm-3");
+        div2.setAttribute("id", "col2");
 
-    // ----Heading Element create and append in div----//
-    var head7 = document.createElement("h5");
-    var ht = document.createTextNode(days[h]);
-    head7.appendChild(ht);
-    h++;
-    if (h == 7) h = 0;
+        // ----ul Element create and append in div----//
+        var ulist2 = document.createElement("ul");
+        ulist2.setAttribute("class", "keys-7");
 
-    // delete button //
-    var del = document.createElement("img");
-    del.src = "images/deleteicon.png";
-    del.setAttribute("class", "btn");
-    del.setAttribute("id", "close");
-    head7.appendChild(del);
-    ulist2.appendChild(head7);
+        // ----Heading Element create and append in div----//
+        var head7 = document.createElement("h5");
+        var ht = document.createTextNode(days[h]);
+        head7.appendChild(ht);
+        h++;
+        if (h == 7) h = 0;
 
-    // list Element//
-    var li1 = document.createElement("li");
-    li1.setAttribute("class", "keywords-7");
-    var text1 = document.createTextNode(dayinp1.value);
-    li1.appendChild(text1);
-    ulist2.appendChild(li1);
-    dayinp1.value = "";
-    // list Element//
-    var li1 = document.createElement("li");
-    li1.setAttribute("class", "keywords-7");
-    var text4 = document.createTextNode(dayinp2.value);
-    li1.appendChild(text4);
-    ulist2.appendChild(li1);
-    dayinp2.value = "";
-    // list Element//
-    var li1 = document.createElement("li");
-    li1.setAttribute("class", "keywords-7");
-    var text5 = document.createTextNode(dayinp3.value);
-    li1.appendChild(text5);
-    ulist2.appendChild(li1);
-    dayinp3.value = "";
-    // list Element//
-    var li2 = document.createElement("li");
-    li2.setAttribute("class", "keywords-7");
-    var text2 = document.createTextNode(dayinp4.value);
-    li2.appendChild(text2);
-    ulist2.appendChild(li2);
-    dayinp4.value = "";
-    // list Element//
-    var li3 = document.createElement("li");
-    li3.setAttribute("class", "keywords-7");
-    var text3 = document.createTextNode(dayinp5.value);
-    li3.appendChild(text3);
-    ulist2.appendChild(li3);
-    div2.appendChild(ulist2);
-    dayinp5.value = "";
+        // delete button //
+        var del = document.createElement("img");
+        del.src = "images/deleteicon.png";
+        del.setAttribute("class", "btn");
+        del.setAttribute("id", "close");
+        head7.appendChild(del);
+        ulist2.appendChild(head7);
 
-    // ---- append whole div in displaytemplate----//
-    disp2.appendChild(div2);
+        // list Element//
+        var li1 = document.createElement("li");
+        li1.setAttribute("class", "keywords-7");
+        var text1 = document.createTextNode(dayinp1.value);
+        li1.appendChild(text1);
+        ulist2.appendChild(li1);
+        dayinp1.value = "";
+        // list Element//
+        var li1 = document.createElement("li");
+        li1.setAttribute("class", "keywords-7");
+        var text4 = document.createTextNode(dayinp2.value);
+        li1.appendChild(text4);
+        ulist2.appendChild(li1);
+        dayinp2.value = "";
+        // list Element//
+        var li1 = document.createElement("li");
+        li1.setAttribute("class", "keywords-7");
+        var text5 = document.createTextNode(dayinp3.value);
+        li1.appendChild(text5);
+        ulist2.appendChild(li1);
+        dayinp3.value = "";
+        // list Element//
+        var li2 = document.createElement("li");
+        li2.setAttribute("class", "keywords-7");
+        var text2 = document.createTextNode(dayinp4.value);
+        li2.appendChild(text2);
+        ulist2.appendChild(li2);
+        dayinp4.value = "";
+        // list Element//
+        var li3 = document.createElement("li");
+        li3.setAttribute("class", "keywords-7");
+        var text3 = document.createTextNode(dayinp5.value);
+        li3.appendChild(text3);
+        ulist2.appendChild(li3);
+        div2.appendChild(ulist2);
+        dayinp5.value = "";
 
-    // color changing using js//
-    div2.style.backgroundColor = colors[k];
-    k++;
-    if (k == 4) k = 0;
+        // ---- append whole div in displaytemplate----//
+        disp2.appendChild(div2);
 
-    del.setAttribute("onclick", "Delete2(this)");
+        // color changing using js//
+        div2.style.backgroundColor = colors[k];
+        k++;
+        if (k == 4) k = 0;
 
+        del.setAttribute("onclick", "Delete2(this)");
+    }
 }
 
 function Delete2(a) {
