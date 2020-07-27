@@ -2,12 +2,10 @@
     width: 80%;
     margin-left: 90px;
     margin-right: 90px;
-    border-radius: 4px;
+    border-radius: 7px;
 }
 
 #input-sec2 {
-    border: 1px solid #dd3e54;
-    background-color: #dd3e54;
     border-radius: 4px;
     text-align: center;
 }
@@ -38,17 +36,13 @@
     outline: none;
 }
 
-#days {
-    color: white;
-}
-
 #col2 {
     padding-top: 10px;
     margin-bottom: 10px;
     margin-bottom: 10px;
-    margin-right: 10px;
     background-color: aqua;
-    border: 6px;
+   border-radius: 7px;
+
 }
 
 #keywords-7 {
@@ -56,6 +50,11 @@
     margin-top: -10px !important;
     margin-bottom: -10px !important;
     text-decoration: none;
+}
+
+#daynumb{
+    font-family: 'Merienda One', cursive;
+    color: white !important;
 }
 
 @media only screen and (max-width: 750px) {

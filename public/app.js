@@ -166,21 +166,21 @@ function temp3() {
         // list Element//
         var li1 = document.createElement("li");
         li1.setAttribute("class", "keywords");
-        var text1 = document.createTextNode(key1.value);
+        var text1 = document.createTextNode("-"+key1.value);
         li1.appendChild(text1);
         ulist.appendChild(li1);
         key1.value = "";
         // list Element//
         var li2 = document.createElement("li");
         li2.setAttribute("class", "keywords");
-        var text2 = document.createTextNode(key2.value);
+        var text2 = document.createTextNode("-"+key2.value);
         li2.appendChild(text2);
         ulist.appendChild(li2);
         key2.value = "";
         // list Element//
         var li3 = document.createElement("li");
         li3.setAttribute("class", "keywords");
-        var text3 = document.createTextNode(key3.value);
+        var text3 = document.createTextNode("-"+key3.value);
         li3.appendChild(text3);
         ulist.appendChild(li3);
         key3.value = "";
