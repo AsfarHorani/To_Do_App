@@ -1,0 +1,419 @@
+// ----------Display Template Using JS-------------//Start//
+const displaytmp = document.getElementById('displaytemplate')
+const tmp1 = document.getElementById('template-1');
+const tmp2 = document.getElementById('template-2');
+const tmp3 = document.getElementById('template-3');
+const tmp4 = document.getElementById('template-4');
+const notmp = document.getElementById('whennotemp');
+
+// Set initially "none" //
+tmp1.style.display = "none";
+tmp2.style.display = "none";
+tmp3.style.display = "none";
+tmp4.style.display = "none";
+
+// Display Today//
+const today= () => {
+    tmp1.style.display = "block";
+    displaytmp.appendChild(tmp1);
+    tmp2.style.display = "none";
+    tmp3.style.display = "none";
+    tmp4.style.display = "none";
+    notmp.style.display = "none";
+}
+// Display Next7Days//
+const Next7Days= ()=> {
+    tmp2.style.display = "block";
+    displaytmp.appendChild(tmp2);
+    tmp1.style.display = "none";
+    tmp3.style.display = "none";
+    tmp4.style.display = "none";
+    notmp.style.display = "none";
+}
+// Display Project//
+const Project= () => {
+    tmp3.style.display = "block";
+    displaytmp.appendChild(tmp3);
+    tmp2.style.display = "none";
+    tmp1.style.display = "none";
+    tmp4.style.display = "none";
+    notmp.style.display = "none";
+}
+//Display Project//
+const Reminder=() => {
+    tmp4.style.display = "block";
+    displaytmp.appendChild(tmp4);
+    tmp2.style.display = "none";
+    tmp3.style.display = "none";
+    tmp1.style.display = "none";
+    notmp.style.display = "none";
+}
+// ----------Display Template Using JS-------------//End//
+
+
+// Template Today //
+
+const todoitem = document.getElementById('to-do-item');
+const todotime = document.getElementById('to-do-time');
+const lis = document.getElementById('list');
+let i = 0;
+
+
+// array of colors//
+const colors = ["#dd3e54", "#41295a", "#004e92", "#0b8793"]
+
+const additem= () => {
+    
+    if (todoitem.value == "" || todotime.value == "") {
+        alert("Please Fill INPUT SECTTIONS carefully");
+    } else {
+        // list creator//
+        
+
+        const markup =`
+                        <li style="background-color: ${colors[i]};" ">
+                            ${todoitem.value} at ${todotime.value}
+                            <img src="images/deleteicon.png" class="btn" id="close" onclick="Delete(this)">
+                            <img src="images/editicon.png" class="ebtn" id="eclose" onclick="edit(this)">
+                        </li>`;
+        
+                    lis.insertAdjacentHTML("afterbegin", markup);
+                    clear();
+                    // li.style.backgroundColor = colors[i];
+
+                    i++;
+                    if (i == 4) i = 0;
+                    
+
+
+        // var li = document.createElement('li');
+        // var text = document.createTextNode(todoitem.value);
+        // li.appendChild(text);
+        // todoitem.value = "";
+        // var textb = document.createTextNode(" at ");
+        // li.appendChild(textb);
+        // var textt = document.createTextNode(todotime.value);
+        // li.appendChild(textt);
+        // todotime.value = "";
+
+        // // delete button //
+        // var del = document.createElement("img");
+        // del.src = "images/deleteicon.png";
+        // del.setAttribute("class", "btn");
+        // del.setAttribute("id", "close");
+        // li.appendChild(del);
+
+        // // delete button //
+        // var edit = document.createElement("img");
+        // edit.src = "images/editicon.png";
+        // edit.setAttribute("class", "ebtn");
+        // edit.setAttribute("id", "eclose");
+        // li.appendChild(edit);
+
+        // lis.appendChild(li);
+
+        // // css on button//
+        // li.style.backgroundColor = colors[i];
+
+        // i++;
+        // if (i == 4) i = 0;
+        // del.setAttribute("onclick", "Delete(this)");
+        // edit.setAttribute("onclick", "edit(this)")
+    }
+
+}
+
+// Delete const //
+const Delete= (e) => {
+    e.parentNode.remove();
+}
+
+// Deleteall function //
+const Deleteall= ()=> {
+    lis.innerHTML = " ";
+}
+
+// Edit function//
+const edit = (a)=> {
+    let val = prompt("Enter edit value", a.parentNode.firstChild.nodeValue);
+    let val2 = prompt("Enter edit time");
+    a.parentNode.firstChild.nodeValue = val;
+    a.parentNode.childNodes[2].nodeValue = val2;
+}
+// 
+// Template Today //
+
+
+// Template Project //
+
+// ----input values----//
+const titl = document.getElementById('to-do-title');
+const link = document.getElementById('to-do-link');
+const key1 = document.getElementById('pro-inp1');
+const key2 = document.getElementById('pro-inp2');
+const key3 = document.getElementById('pro-inp3');
+
+const disp3 = document.getElementById('display3');
+let j = 0;
+
+const temp3=()=> {
+    if (titl.value == "" || link.value == "" || key1.value == "" || key2.value == "" || key3.value == "") {
+        alert("Please Fill INPUT SECTTIONS carefully");
+    } else {
+        // // ----Creates div Element----//
+
+        markup = `
+    <div class="col-sm-3" id="col" style="background-color: ${colors[j]};">
+        <h2 class="pro-title">
+                        ${titl.value}
+                <img src="images/deleteicon.png" class="btn" id="close" onclick="Delete3(this)">
+        </h2>
+                <ul class="pro-keys">
+                        <li class="keywords">
+                        ${key1.value}
+                        </li>
+                        <li class="keywords">
+                        ${key2.value}
+                        </li>
+                        <li class="keywords">
+                        ${key2.value}
+                        </li>
+                </ul>
+        <h2 class="pro-links">
+                        ${link.value}
+        </h2>
+    </div>`;
+        disp3.insertAdjacentHTML("afterbegin", markup);
+        clear();
+
+        j++;
+        if (j == 4) j = 0;
+
+
+
+        // var divv = document.createElement("div");
+        // divv.setAttribute("class", "col-sm-3");
+        // divv.setAttribute("id", "col");
+
+        // // ----Heading Element create and append in div----//
+        // var head1 = document.createElement("h2");
+        // var tt = document.createTextNode(titl.value);
+        // head1.appendChild(tt);
+        // head1.setAttribute("class", "pro-title");
+        // titl.value = "";
+
+        // // delete button //
+        // var del = document.createElement("img");
+        // del.src = "images/deleteicon.png";
+        // del.setAttribute("class", "btn");
+        // del.setAttribute("id", "close");
+        // head1.appendChild(del);
+        // divv.appendChild(head1);
+
+        // // ----ul Element create and append in div----//
+        // var ulist = document.createElement("ul");
+        // ulist.setAttribute("class", "pro-keys");
+
+        // // list Element//
+        // var li1 = document.createElement("li");
+        // li1.setAttribute("class", "keywords");
+        // var text1 = document.createTextNode(key1.value);
+        // li1.appendChild(text1);
+        // ulist.appendChild(li1);
+        // key1.value = "";
+        // // list Element//
+        // var li2 = document.createElement("li");
+        // li2.setAttribute("class", "keywords");
+        // var text2 = document.createTextNode(key2.value);
+        // li2.appendChild(text2);
+        // ulist.appendChild(li2);
+        // key2.value = "";
+        // // list Element//
+        // var li3 = document.createElement("li");
+        // li3.setAttribute("class", "keywords");
+        // var text3 = document.createTextNode(key3.value);
+        // li3.appendChild(text3);
+        // ulist.appendChild(li3);
+        // key3.value = "";
+
+        // divv.appendChild(ulist);
+
+        // // ----Heading Element create and append in div----//
+        // var head2 = document.createElement("h2");
+        // var tt2 = document.createTextNode(link.value);
+        // head2.appendChild(tt2);
+        // head2.setAttribute("class", "pro-links");
+        // divv.appendChild(head2);
+        // link.value = ""
+
+        // // ---- append whole div in displaytemplate----//
+        // disp3.appendChild(divv);
+
+        // color changing using js//
+        // divv.style.backgroundColor = colors[j];
+        // j++;
+        // if (j == 4) j = 0;
+
+      //  del.setAttribute("onclick", "Delete3(this)");
+    }
+}
+
+const Delete3=(e) => {
+    e.parentNode.parentNode.remove();
+}
+
+const Deleteall3=()=> {
+    disp3.innerHTML = "";
+}
+// Template Project //
+
+// Template Next7Days //
+const disp2 = document.getElementById('display2');
+const daynum = document.getElementById('daynumb');
+const dayinp1 = document.getElementById('dayinp-1');
+const dayinp2 = document.getElementById('dayinp-2');
+const dayinp3 = document.getElementById('dayinp-3');
+const dayinp4 = document.getElementById('dayinp-4');
+const dayinp5 = document.getElementById('dayinp-5');
+let k = 0;
+let h = 0;
+const days = ["Day 1", "Day 2", "Day 3", "Day 4", "Day 5", "Day 6", "Day 7"]
+
+const temp2=()=> {
+    if (dayinp1.value == "" || dayinp2.value == "" || dayinp3.value == "" || dayinp4.value == "" || dayinp5.value == "") {
+        alert("Please Fill INPUT SECTTIONS carefully");
+    } else {
+
+        markup = `
+    <div class="col-sm-3" id="col2" style="background-color: ${colors[k]};">
+        <ul class="keys-7">
+                <h5>
+                        ${days[h]}
+                        <img src="images/deleteicon.png" class="btn" id="close" onclick="Delete2(this)">
+                </h5>
+                <li class="keywords-7">
+                        ${dayinp1.value}
+                </li>
+                <li class="keywords-7">
+                        ${dayinp2.value}
+                </li>
+                <li class="keywords-7"> 
+                        ${dayinp3.value}
+                </li>
+                <li class="keywords-7">
+                        ${dayinp4.value}
+                </li>
+                <li class="keywords-7">
+                        ${dayinp5.value}
+                </li>
+        </ul>
+    </div>`;
+
+
+        disp2.insertAdjacentHTML("afterbegin", markup);
+        clear();
+
+        k++;
+        if (k == 4) k = 0;
+        h++;
+        if (h == 7) h = 0;
+
+
+
+
+        // // ----Creates div Element----//
+        // const div2 = document.createElement("div");
+        // div2.setAttribute("class", "col-sm-3");
+        // div2.setAttribute("id", "col2");
+
+        // // ----ul Element create and append in div----//
+        // var ulist2 = document.createElement("ul");
+        // ulist2.setAttribute("class", "keys-7");
+
+        // // ----Heading Element create and append in div----//
+        // var head7 = document.createElement("h5");
+        // var ht = document.createTextNode(days[h]);
+        // head7.appendChild(ht);
+        // h++;
+        // if (h == 7) h = 0;
+
+        // // delete button //
+        // var del = document.createElement("img");
+        // del.src = "images/deleteicon.png";
+        // del.setAttribute("class", "btn");
+        // del.setAttribute("id", "close");
+        // head7.appendChild(del);
+        // ulist2.appendChild(head7);
+
+        // // list Element//
+        // var li1 = document.createElement("li");
+        // li1.setAttribute("class", "keywords-7");
+        // var text1 = document.createTextNode(dayinp1.value);
+        // li1.appendChild(text1);
+        // ulist2.appendChild(li1);
+        // dayinp1.value = "";
+        // // list Element//
+        // var li1 = document.createElement("li");
+        // li1.setAttribute("class", "keywords-7");
+        // var text4 = document.createTextNode(dayinp2.value);
+        // li1.appendChild(text4);
+        // ulist2.appendChild(li1);
+        // dayinp2.value = "";
+        // // list Element//
+        // var li1 = document.createElement("li");
+        // li1.setAttribute("class", "keywords-7");
+        // var text5 = document.createTextNode(dayinp3.value);
+        // li1.appendChild(text5);
+        // ulist2.appendChild(li1);
+        // dayinp3.value = "";
+        // // list Element//
+        // var li2 = document.createElement("li");
+        // li2.setAttribute("class", "keywords-7");
+        // var text2 = document.createTextNode(dayinp4.value);
+        // li2.appendChild(text2);
+        // ulist2.appendChild(li2);
+        // dayinp4.value = "";
+        // // list Element//
+        // var li3 = document.createElement("li");
+        // li3.setAttribute("class", "keywords-7");
+        // var text3 = document.createTextNode(dayinp5.value);
+        // li3.appendChild(text3);
+        // ulist2.appendChild(li3);
+        // div2.appendChild(ulist2);
+        // dayinp5.value = "";
+
+        // // ---- append whole div in displaytemplate----//
+        // disp2.appendChild(div2);
+
+        // // color changing using js//
+        // div2.style.backgroundColor = colors[k];
+        // k++;
+        // if (k == 4) k = 0;
+
+        // del.setAttribute("onclick", "Delete2(this)");
+    }
+}
+
+const Delete2=(a)=> {
+    a.parentNode.parentNode.parentNode.remove();
+}
+
+const deleteall2=() =>{
+    disp2.innerHTML = "";
+}
+
+const clear =()=>{
+    todoitem.value="";
+    todotime.value="";
+    titl.value="";
+    link.value="";
+    key1.value="";
+    key2.value="";
+    key3.value="";
+    dayinp1.value="";
+    dayinp2.value="";
+    dayinp3.value="";
+    dayinp4.value="";
+    dayinp5.value="";
+
+}
